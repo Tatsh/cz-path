@@ -77,6 +77,9 @@ strict = true
 strict_optional = true
 warn_unreachable = true
 
+[tool.poetry]
+include = [{ format = "sdist", path = "tests" }]
+
 [tool.poetry.dependencies]
 commitizen = "^4.8.3"
 gitpython = "^3.1.44"
