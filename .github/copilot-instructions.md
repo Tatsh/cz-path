@@ -1,6 +1,6 @@
 # Copilot Instructions
 
-cz-section is a plugin for Commitizen that detects sections modified in a source and uses that for
+cz-path is a plugin for Commitizen that detects sections modified in a source and uses that for
 the prefix of the commit message.
 
 ## General

@@ -1,3 +1,3 @@
-# How to contribute to cz-section
+# How to contribute to cz-path
 
 To be written.
