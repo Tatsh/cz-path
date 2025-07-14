@@ -48,7 +48,7 @@
   },
   "files": ["LICENSE.txt", "README.md"],
   "homepage": "https://tatsh.github.io/cz-path/",
-  "keywords": ["commit messages", "git", "version control"],
+  "keywords": ["commitizen", "commit messages", "git", "version control"],
   "license": "MIT",
   "markdownlint-cli2": {
     "config": {

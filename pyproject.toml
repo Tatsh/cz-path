@@ -15,7 +15,7 @@ classifiers = [
 ]
 description = "Commitizen plugin that prefixes commit messages with the common path or prefix of staged files."
 dynamic = ["dependencies", "requires-python"]
-keywords = ["commit messages", "git", "version control"]
+keywords = ["commitizen", "commit messages", "git", "version control"]
 license = "MIT"
 name = "cz-path"
 readme = "README.md"
@@ -87,6 +87,7 @@ typing-extensions = "^4.14.0"
 optional = true
 
 [tool.poetry.group.dev.dependencies]
+commitizen = "^4.8.3"
 djlint = "^1.36.4"
 mypy = "^1.16.1"
 ruff = "^0.12.0"

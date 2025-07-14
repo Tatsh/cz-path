@@ -6,11 +6,15 @@
   },
   // Project-specific
   description: 'Commitizen plugin that prefixes commit messages with the common path or prefix of staged files.',
-  keywords: ['commit messages', 'git', 'version control'],
+  keywords: ['commitizen', 'commit messages', 'git', 'version control'],
   project_name: 'cz-path',
   version: '0.0.0',
   pyproject+: {
     tool+: {
+      commitizen+: {
+        name: 'cz_path',
+        remove_path_prefixes: ['cz_path'],
+      },
       poetry+: {
         dependencies+: {
           commitizen: '^4.8.3',
