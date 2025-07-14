@@ -2,7 +2,7 @@
 from __future__ import annotations
 
 from pathlib import Path
-from typing import TYPE_CHECKING, Any
+from typing import TYPE_CHECKING, Any, cast
 import os.path
 
 from commitizen.cz.base import BaseCommitizen
@@ -25,7 +25,11 @@ def _parse_diffs(diffs: Iterable[Diff]) -> Iterable[str]:
         if diff.renamed_file:
             assert diff.b_path is not None
             which = Path(diff.b_path)
-        base, _, _ = which.name.partition('.')
+        base, _, rest = which.name.partition('.')
+        if not base and rest:
+            # `.cz.json` -> `cz`
+            # `.gitignore` -> `gitignore`
+            base = rest if '.' not in rest else '.'.join(rest.split('.')[:-1])
         yield str(which.with_name(base))
 
 
@@ -51,16 +55,27 @@ class NoStagedFilesError(CzException):
 
 
 class PathCommitizen(BaseCommitizen):
-    """cz-section commitizen class."""
+    """cz-path commitizen class."""
     @override
     def questions(self) -> Iterable[ListQuestion | InputQuestion | ConfirmQuestion]:
+        post_remove_path_prefixes = [
+            x.rstrip('/')
+            for x in cast('Iterable[str]', self.config.settings.get('remove_path_prefixes', (
+                'src',)))
+        ]
         common_path = _get_common_path()
         common_prefix = _get_common_prefix()
         choices: list[Choice] = []
         if common_path:
-            choices.append({'value': common_path, 'name': 'Common path', 'key': 'p'})
+            for prefix in post_remove_path_prefixes:
+                common_path = common_path.removeprefix(f'{prefix}/')
+            common_path = common_path.lower()
+            choices.append({'value': common_path, 'name': common_path, 'key': 'p'})
         if common_prefix:
-            choices.append({'value': common_prefix, 'name': 'Common prefix', 'key': 'r'})
+            for prefix in post_remove_path_prefixes:
+                common_prefix = common_prefix.removeprefix(f'{prefix}/')
+            common_prefix = common_prefix.lower()
+            choices.append({'value': common_prefix, 'name': common_prefix, 'key': 'r'})
         return ({
             'type':
                 'list',
@@ -71,11 +86,11 @@ class PathCommitizen(BaseCommitizen):
             'choices': [
                 *choices, {
                     'value': 'project',
-                    'name': 'Project root',
+                    'name': 'project',
                     'key': 'o'
                 }, {
                     'value': '',
-                    'name': 'Nothing',
+                    'name': '(empty)',
                     'key': 'n'
                 }
             ]
