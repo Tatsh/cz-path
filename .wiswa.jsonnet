@@ -17,7 +17,7 @@
           gitpython: '^3.1.44',
         },
         plugins: {
-          'commitizen.plugin': { cz_path: 'cz_path.plugin.PathCommitizen' },
+          'commitizen.plugin': { cz_path: 'cz_path.plugin:PathCommitizen' },
         },
       },
     },
