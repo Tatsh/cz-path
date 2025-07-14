@@ -79,9 +79,6 @@ Commitizen plugin that prefixes commit messages with the common path or prefix o
 
 .. only:: html
 
-   .. automodule:: cz_path.plugin
-      :members:
-
    Indices and tables
    ==================
    * :ref:`genindex`
