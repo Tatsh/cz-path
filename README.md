@@ -4,7 +4,7 @@
 [![PyPI - Version](https://img.shields.io/pypi/v/cz-path)](https://pypi.org/project/cz-path/)
 [![GitHub tag (with filter)](https://img.shields.io/github/v/tag/Tatsh/cz-path)](https://github.com/Tatsh/cz-path/tags)
 [![License](https://img.shields.io/github/license/Tatsh/cz-path)](https://github.com/Tatsh/cz-path/blob/master/LICENSE.txt)
-[![GitHub commits since latest release (by SemVer including pre-releases)](https://img.shields.io/github/commits-since/Tatsh/cz-path/v0.0.0/master)](https://github.com/Tatsh/cz-path/compare/v0.0.0...master)
+[![GitHub commits since latest release (by SemVer including pre-releases)](https://img.shields.io/github/commits-since/Tatsh/cz-path/v0.0.1/master)](https://github.com/Tatsh/cz-path/compare/v0.0.1...master)
 [![CodeQL](https://github.com/Tatsh/cz-path/actions/workflows/codeql.yml/badge.svg)](https://github.com/Tatsh/cz-path/actions/workflows/codeql.yml)
 [![QA](https://github.com/Tatsh/cz-path/actions/workflows/qa.yml/badge.svg)](https://github.com/Tatsh/cz-path/actions/workflows/qa.yml)
 [![Tests](https://github.com/Tatsh/cz-path/actions/workflows/tests.yml/badge.svg)](https://github.com/Tatsh/cz-path/actions/workflows/tests.yml)
