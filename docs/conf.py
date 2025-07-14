@@ -69,9 +69,9 @@ html_theme_options = {
             'name': 'Switch to system preference'
         }
     }],
-    'repo_name': 'cz-section',
-    'repo_url': 'https://github.com/Tatsh/cz-section',
-    'site_url': 'https://cz-section.readthedocs.org',
+    'repo_name': 'cz-path',
+    'repo_url': 'https://github.com/Tatsh/cz-path',
+    'site_url': 'https://cz-path.readthedocs.org',
     'toc_title_is_page_title': True
 }
 intersphinx_mapping = {'python': ('https://docs.python.org/3', None)}
