@@ -1,6 +1,5 @@
 asyncio
 autodoc
-automodule
 bsky
 codeowners
 colored
@@ -53,6 +52,7 @@ pytest
 regen
 rstcheck
 schemafile
+sdist
 sphinxcontrib
 tatsh
 testpaths
