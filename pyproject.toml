@@ -84,7 +84,7 @@ include = [{ format = "sdist", path = "tests" }]
 commitizen = "^4.8.3"
 gitpython = "^3.1.44"
 python = ">=3.10,<3.14"
-typing-extensions = "^4.14.0"
+typing-extensions = "^4.14.1"
 
 [tool.poetry.group.dev]
 optional = true
@@ -92,8 +92,8 @@ optional = true
 [tool.poetry.group.dev.dependencies]
 commitizen = "^4.8.3"
 djlint = "^1.36.4"
-mypy = "^1.16.1"
-ruff = "^0.12.0"
+mypy = "^1.17.0"
+ruff = "^0.12.4"
 yapf = "^0.43.0"
 
 [tool.poetry.group.docs]
@@ -104,7 +104,7 @@ autodoc-pydantic = "^2.2.0"
 doc8 = "^2.0.0"
 docutils = "^0.21.2"
 esbonio = "^0.16.5"
-numpydoc = "^1.8.0"
+numpydoc = "^1.9.0"
 restructuredtext-lint = "^1.4.0"
 sphinx-click = "^6.0.0"
 sphinx-datatables = "^0.3.0"
@@ -128,7 +128,7 @@ optional = true
 
 [tool.poetry.group.tests.dependencies]
 mock = "^5.2.0"
-pytest = "^8.4.0"
+pytest = "^8.4.1"
 pytest-cov = "^6.2.1"
 pytest-mock = "^3.14.1"
 
