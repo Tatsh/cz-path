@@ -9,7 +9,7 @@ cz-path
 
    .. image:: https://img.shields.io/pypi/v/cz-path
       :target: https://pypi.org/project/cz-path/
-      :alt: PyPI - Version
+      :alt: PyPI Version
 
    .. image:: https://img.shields.io/github/v/tag/Tatsh/cz-path
       :target: https://github.com/Tatsh/cz-path/tags
@@ -19,9 +19,13 @@ cz-path
       :target: https://github.com/Tatsh/cz-path/blob/master/LICENSE.txt
       :alt: License
 
-   .. image:: https://img.shields.io/github/commits-since/Tatsh/cz-path/v0.1.1/master
-      :target: https://github.com/Tatsh/cz-path/compare/v0.1.1...master
+   .. image:: https://img.shields.io/github/commits-since/Tatsh/cz-path/v0.0.1/master
+      :target: https://github.com/Tatsh/cz-path/compare/v0.0.1...master
       :alt: GitHub commits since latest release (by SemVer including pre-releases)
+
+   .. image:: https://github.com/Tatsh/cz-path/actions/workflows/codeql.yml/badge.svg
+      :target: https://github.com/Tatsh/cz-path/actions/workflows/codeql.yml
+      :alt: CodeQL
 
    .. image:: https://github.com/Tatsh/cz-path/actions/workflows/qa.yml/badge.svg
       :target: https://github.com/Tatsh/cz-path/actions/workflows/qa.yml
