@@ -84,7 +84,7 @@ include = [{ format = "sdist", path = "tests" }]
 commitizen = "^4.8.3"
 gitpython = "^3.1.45"
 python = ">=3.10,<3.14"
-typing-extensions = "^4.14.1"
+typing-extensions = "^4.15.0"
 
 [tool.poetry.group.dev]
 optional = true
