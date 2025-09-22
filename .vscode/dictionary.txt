@@ -1,8 +1,8 @@
 asyncio
 autodoc
+bascom
 bsky
 codeowners
-colored
 commitizen
 conftest
 coveragerc
@@ -30,7 +30,6 @@ itertools
 jinja
 jsonnet
 jsonschema
-levelname
 lextudio
 libjsonnet
 linters
@@ -46,6 +45,7 @@ pydantic
 pydocstyle
 pylance
 pylint
+pypi
 pyproject
 pyright
 pytest

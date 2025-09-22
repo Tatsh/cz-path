@@ -1,39 +1,8 @@
-# Copilot Instructions
+---
+applyTo: '**/*.py, **/*.pyi'
+---
 
-cz-path is a plugin for Commitizen that detects sections modified in a source and uses that for
-the prefix of the commit message.
-
-## General
-
-- Do not explain project structure or conventions in comments or docstrings.
-- Use 2 spaces for indentation except in Python.
-- Files must end with a single newline character.
-- Keep lines shorter than 100 characters.
-- Line endings must be Unix-style (LF).
-- Use UTF-8 encoding for all files.
-- Use spaces instead of tabs for indentation.
-- Use British spelling in comments and docstrings.
-- Use American spelling for all identifiers and string literals, except in docstrings.
-- Never mention the spelling or other project conventions in comments or docstrings.
-- Use full sentences in comments and docstrings.
-- Use the Oxford comma in lists.
-- Use single quotes for strings, except where double quotes are required (e.g., JSON).
-- Full words should be preferred over abbreviations, except for well-known acronyms. Some words may
-  be abbreviated:
-  - `config` for configuration.
-- Prefer to use immutable data structures over mutable ones.
-
-## JSON and YAML
-
-- By default, output should be recursively sorted by key.
-
-## Markdown guidelines
-
-- `MD033`: `<kbd>` tags are allowed.
-- `MD024`: Headers do not have to be unique if they are in different sections.
-- Line length does not apply to code blocks.
-
-## Python guidelines
+# Python guidelines
 
 - Follow all rules given by Ruff, with the following exceptions:
   - `ANN401`: Allow use of the `typing.Any` type.
@@ -87,10 +56,10 @@ the prefix of the commit message.
 - All test function names must start with `test_`.
 - Test files must be named `test_*.py`.
 - Use `pytest` for testing.
-- Use `pytest.mark.parametrize` for parameterized tests.
-- Use `pytest.mark.asyncio` for asynchronous tests.
+- Use `@pytest.mark.parametrize` for parameterized tests.
+- Use `@pytest.mark.asyncio` for asynchronous tests.
 - Use `pytest.raises` for testing exceptions.
-- Use `pytest.fixture` decorator for fixtures.
+- Use `@pytest.fixture` decorator for fixtures.
 - Do not create new fixtures inside test files. All fixtures must be defined in the `conftest.py`
   file.
 - Ruff rules do not apply to files inside a `migrations` directory.
@@ -131,37 +100,3 @@ the prefix of the commit message.
 - By default, sort collections alphabetically.
 - If a function accepts a collection of items and returns it, prefer to return a modified copy of
   the collection instead of modifying it in place.
-
-## Python test guidelines
-
-- Always add type hints including the return value.
-  - The type of the `mocker` fixture is `MockerFixture`. It is imported as
-    `from pytest_mock import MockerFixture`.
-- All test function names must start with `test_`.
-- Test files must be named `test_*.py`.
-- Use `pytest.mark.parametrize` for parameterized tests.
-- Use `pytest.mark.asyncio` for asynchronous tests.
-- Use `pytest.raises` for testing exceptions.
-- Use `pytest.fixture` for fixtures.
-- Do not create new fixtures inside test files.
-- All fixtures must be defined in the `tests/conftest.py` file.
-- Do not add docstrings to test functions or methods.
-- Mock external dependencies and IO operations in tests.
-- If a parameter must exist in a callback, use `_` as the identifier if it is not a keyword
-  argument.
-
-## SQL guidelines
-
-- Dialect is PostgreSQL.
-- Use 2 spaces for indentation.
-- Use uppercase for SQL keywords (e.g., `SELECT`, `FROM`, `WHERE`).
-- Use single quotes for string literals.
-- Use double quotes for identifiers (e.g., table names, column names) if they contain special
-  characters or are reserved words.
-- Use `snake_case` for table and column names.
-- If the file contains `%(variable)s` placeholders, assume it is a template file.
-- If the file is a template, it must use `%(variable)s` style for placeholders.
-
-## TOML and INI-like file guidelines
-
-- `=` must be surrounded by a single space on both sides.

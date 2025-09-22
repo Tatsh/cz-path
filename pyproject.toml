@@ -41,9 +41,9 @@ version_files = [
   ".wiswa.jsonnet",
   "CITATION.cff",
   "README.md",
+  "cz_path/__init__.py",
   "docs/index.rst",
   "package.json",
-  "cz_path/__init__.py",
 ]
 version_provider = "pep621"
 
@@ -77,10 +77,8 @@ strict = true
 strict_optional = true
 warn_unreachable = true
 
-[tool.poetry]
-include = [{ format = "sdist", path = "tests" }]
-
 [tool.poetry.dependencies]
+bascom = "^0.0.1"
 commitizen = "^4.9.1"
 gitpython = "^3.1.45"
 python = ">=3.10,<3.14"
@@ -93,7 +91,7 @@ optional = true
 commitizen = "^4.9.1"
 djlint = "^1.36.4"
 mypy = "^1.18.2"
-ruff = "^0.13.0"
+ruff = "^0.13.1"
 yapf = "^0.43.0"
 
 [tool.poetry.group.docs]
@@ -102,7 +100,7 @@ optional = true
 [tool.poetry.group.docs.dependencies]
 autodoc-pydantic = "^2.2.0"
 doc8 = "^2.0.0"
-docutils = "^0.21.2"
+docutils = "<0.22"
 esbonio = "^0.16.5"
 numpydoc = "^1.9.0"
 restructuredtext-lint = "^1.4.0"
@@ -130,11 +128,15 @@ optional = true
 mock = "^5.2.0"
 pytest = "^8.4.2"
 pytest-cov = "^7.0.0"
-pytest-mock = "^3.15.0"
+pytest-mock = "^3.15.1"
 
 [tool.poetry.group.tests.dependencies.coveralls]
 python = "<3.13"
 version = "^4.0.1"
+
+[[tool.poetry.include]]
+format = "sdist"
+path = "tests"
 
 [[tool.poetry.packages]]
 include = "cz_path"
@@ -255,7 +257,7 @@ ignore = [
 preview = true
 
 [tool.ruff.lint.flake8-builtins]
-allowed-modules = ["typing", "types"]
+allowed-modules = ["types", "typing"]
 
 [tool.ruff.lint.flake8-quotes]
 inline-quotes = "single"
@@ -274,14 +276,17 @@ max-complexity = 20
 [tool.ruff.lint.pep8-naming]
 extend-ignore-names = ["test_*"]
 
-[tool.ruff.lint.per-file-ignores]
-"main.py" = ["PLR0913"]
-
 [tool.ruff.lint.pydocstyle]
 convention = "numpy"
 
 [tool.ruff.lint.pylint]
+max-args = 20
 max-branches = 20
+max-locals = 20
+max-positional-args = 15
+max-public-methods = 30
+max-returns = 10
+max-statements = 100
 
 [tool.yapf]
 align_closing_bracket_with_visual_indent = true
