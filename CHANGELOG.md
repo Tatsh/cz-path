@@ -9,9 +9,16 @@ adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
 ## [Unreleased]
 
+## [0.0.2] - 2025-10-09
+
+### Changed
+
+- Increase Python upper boundary constraint.
+
 ## [0.0.1] - 2025-07-13
 
 First version.
 
-[unreleased]: https://github.com/Tatsh/cz-path/compare/v0.0.1...HEAD
+[unreleased]: https://github.com/Tatsh/cz-path/compare/v0.0.2...HEAD
+[0.0.2]: https://github.com/Tatsh/cz-path/compare/v0.0.1...v0.0.2
 [0.0.1]: https://github.com/Tatsh/cz-path/releases/tag/v0.0.1

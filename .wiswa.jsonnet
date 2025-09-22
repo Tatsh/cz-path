@@ -22,7 +22,7 @@ local utils = import 'utils.libjsonnet';
       },
     },
   },
-  copilot+: {
+  copilot: {
     intro: 'cz-path is a plugin for Commitizen that gives options to prefix commit messages with a common path or common prefix of staged files.',
   },
 }
