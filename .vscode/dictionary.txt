@@ -1,6 +1,5 @@
 asyncio
 autodoc
-bascom
 bsky
 codeowners
 commitizen
@@ -43,11 +42,9 @@ pipx
 pycache
 pydantic
 pydocstyle
-pylance
 pylint
 pypi
 pyproject
-pyright
 pytest
 regen
 rstcheck
@@ -57,6 +54,7 @@ shellformat
 sphinxcontrib
 tatsh
 testpaths
+tomlkit
 tryfirst
 udvare
 venv
