@@ -9,6 +9,14 @@ adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
 ## [Unreleased]
 
+## [0.0.3] - 2025-11-08
+
+This release is primarily for testing the publishing workflow.
+
+### Removed
+
+- Removed unused `bascom` dependency from project dependencies.
+
 ## [0.0.2] - 2025-10-09
 
 ### Changed
@@ -19,6 +27,7 @@ adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
 First version.
 
-[unreleased]: https://github.com/Tatsh/cz-path/compare/v0.0.2...HEAD
+[unreleased]: https://github.com/Tatsh/cz-path/compare/v0.0.3...HEAD
+[0.0.3]: https://github.com/Tatsh/cz-path/compare/v0.0.2...v0.0.3
 [0.0.2]: https://github.com/Tatsh/cz-path/compare/v0.0.1...v0.0.2
 [0.0.1]: https://github.com/Tatsh/cz-path/releases/tag/v0.0.1
