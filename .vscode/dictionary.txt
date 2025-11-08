@@ -1,5 +1,6 @@
 asyncio
 autodoc
+bascom
 bsky
 codeowners
 commitizen
@@ -43,6 +44,7 @@ pycache
 pydantic
 pydocstyle
 pylint
+pypa
 pypi
 pyproject
 pytest
@@ -51,6 +53,7 @@ rstcheck
 schemafile
 sdist
 shellformat
+softprops
 sphinxcontrib
 tatsh
 testpaths
