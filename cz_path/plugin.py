@@ -57,7 +57,7 @@ class NoStagedFilesError(CzException):
 class PathCommitizen(BaseCommitizen):
     """cz-path commitizen class."""
     @override
-    def questions(self) -> Iterable[ListQuestion | InputQuestion | ConfirmQuestion]:
+    def questions(self) -> list[ListQuestion | InputQuestion | ConfirmQuestion]:
         post_remove_path_prefixes = [
             x.rstrip('/')
             for x in cast('Iterable[str]', self.config.settings.get('remove_path_prefixes', (
@@ -76,7 +76,7 @@ class PathCommitizen(BaseCommitizen):
                 common_prefix = common_prefix.removeprefix(f'{prefix}/')
             common_prefix = common_prefix.lower()
             choices.append({'value': common_prefix, 'name': common_prefix, 'key': 'r'})
-        return ({
+        return [{
             'type':
                 'list',
             'name':
@@ -98,7 +98,7 @@ class PathCommitizen(BaseCommitizen):
             'type': 'input',
             'name': 'title',
             'message': 'Commit title:'
-        })
+        }]
 
     @override
     def example(self) -> str:
@@ -111,3 +111,11 @@ class PathCommitizen(BaseCommitizen):
     @override
     def message(self, answers: Mapping[str, Any]) -> str:
         return f'{answers["prefix"]}: {answers.get("title", "(no message provided)")}'
+
+    @override
+    def schema_pattern(self) -> str:
+        return r'^(?P<prefix>[\w\-/]*): (?P<message>.+)$'
+
+    @override
+    def info(self) -> str:
+        return 'path commitizen'
