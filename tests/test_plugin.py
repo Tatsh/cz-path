@@ -90,3 +90,19 @@ def test_path_commitizen_message(mocker: MockerFixture, answers: Mapping[str, An
     from cz_path.plugin import PathCommitizen
     cz = PathCommitizen(mocker.Mock())
     assert cz.message(answers) == expected
+
+
+def test_path_schema_pattern(mocker: MockerFixture) -> None:
+    mocker.patch('commitizen.cz.pkgutil.iter_modules', return_value=[])
+    from cz_path.plugin import PathCommitizen
+    cz = PathCommitizen(mocker.Mock(settings={}))
+    regex = cz.schema_pattern()
+    assert '<prefix>' in regex
+    assert '<message>' in regex
+
+
+def test_path_info(mocker: MockerFixture) -> None:
+    mocker.patch('commitizen.cz.pkgutil.iter_modules', return_value=[])
+    from cz_path.plugin import PathCommitizen
+    cz = PathCommitizen(mocker.Mock(settings={}))
+    assert cz.info() == 'path commitizen'
