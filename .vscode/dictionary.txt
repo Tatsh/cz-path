@@ -6,6 +6,7 @@ codeowners
 commitizen
 conftest
 coveragerc
+coverallsapp
 dataclasses
 datatable
 datatables
@@ -31,6 +32,7 @@ jinja
 jsonnet
 jsonschema
 lextudio
+libera
 libjsonnet
 linters
 modindex
@@ -39,6 +41,7 @@ namedtuples
 norecursedirs
 numpy
 numpydoc
+pavelzw
 pipx
 pycache
 pydantic
