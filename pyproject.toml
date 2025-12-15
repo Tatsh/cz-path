@@ -79,7 +79,7 @@ strict_optional = true
 warn_unreachable = true
 
 [tool.poetry.dependencies]
-commitizen = "^4.10.0"
+commitizen = "^4.10.1"
 gitpython = "^3.1.45"
 python = ">=3.10,<4.0"
 typing-extensions = "^4.15.0"
@@ -88,7 +88,7 @@ typing-extensions = "^4.15.0"
 optional = true
 
 [tool.poetry.group.dev.dependencies]
-commitizen = "^4.10.0"
+commitizen = "^4.10.1"
 djlint = "^1.36.4"
 mypy = "^1.19.0"
 ruff = "^0.14.8"
