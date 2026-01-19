@@ -424,14 +424,14 @@ markers = {docs = "sys_platform == \"win32\"", tests = "sys_platform == \"win32\
 
 [[package]]
 name = "commitizen"
-version = "4.11.0"
+version = "4.12.0"
 description = "Python commitizen client tool"
 optional = false
 python-versions = "<4.0,>=3.10"
 groups = ["main", "dev"]
 files = [
-    {file = "commitizen-4.11.0-py3-none-any.whl", hash = "sha256:a30fdf326bb0913b7b25f8b30530c899159b1757efa9969b0aa1808dad102c02"},
-    {file = "commitizen-4.11.0.tar.gz", hash = "sha256:d311297a0165ef9f30e0877e04608b786d5fd69760f32245fbf1c21e793e91df"},
+    {file = "commitizen-4.12.0-py3-none-any.whl", hash = "sha256:9cb4413b32ff95cf1e9e029499574ef543e9fd3e50e6dcc70cf9807dc4c3fb4f"},
+    {file = "commitizen-4.12.0.tar.gz", hash = "sha256:c273aa679690b6887db7724a11f7adc8f18414740c6a350d00367d17290d8048"},
 ]
 
 [package.dependencies]
@@ -442,12 +442,12 @@ decli = ">=0.6.0,<1.0"
 deprecated = ">=1.2.13,<2"
 jinja2 = ">=2.10.3"
 packaging = ">=19"
-prompt_toolkit = "!=3.0.52"
-pyyaml = ">=3.08"
+prompt-toolkit = "!=3.0.52"
+pyyaml = ">=3.8"
 questionary = ">=2.0,<3.0"
 termcolor = ">=1.1.0,<4.0.0"
 tomlkit = ">=0.8.0,<1.0.0"
-typing-extensions = {version = ">=4.0.1,<5.0.0", markers = "python_version < \"3.11\""}
+typing-extensions = {version = ">=4.0.1,<5.0.0", markers = "python_full_version < \"3.11.0\""}
 
 [[package]]
 name = "coverage"
@@ -3098,4 +3098,4 @@ tomli = {version = ">=2.0.1", markers = "python_version < \"3.11\""}
 [metadata]
 lock-version = "2.1"
 python-versions = ">=3.10,<4.0"
-content-hash = "17bd0f24718c6a4d01e73a2dc64108c29fab0759c263586186acea1dba217f84"
+content-hash = "19fb359f4d840c8a00340e778aba047700b38c6d355e238459dbb3903782132f"
