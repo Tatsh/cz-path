@@ -424,14 +424,14 @@ markers = {docs = "sys_platform == \"win32\"", tests = "sys_platform == \"win32\
 
 [[package]]
 name = "commitizen"
-version = "4.13.6"
+version = "4.13.7"
 description = "Python commitizen client tool"
 optional = false
 python-versions = "<4.0,>=3.10"
 groups = ["main", "dev"]
 files = [
-    {file = "commitizen-4.13.6-py3-none-any.whl", hash = "sha256:cc932795656ebe05fbbbfe2a7ac5308c7acaa7c7661c6f5443a913e13e9470a7"},
-    {file = "commitizen-4.13.6.tar.gz", hash = "sha256:4134e67d7f3c0ba77becd423c157a34a131f4c81f60e6b5468ce3ad056eb8a9b"},
+    {file = "commitizen-4.13.7-py3-none-any.whl", hash = "sha256:7e179fa2a29626d330e38332e3f306caa3f11ac1cc0bc139f61dff167f224434"},
+    {file = "commitizen-4.13.7.tar.gz", hash = "sha256:61b1872a3b5b9da69f1819a4e238249071a636ef422cf6f3735c491eb77e9526"},
 ]
 
 [package.dependencies]
@@ -3097,4 +3097,4 @@ tomli = {version = ">=2.0.1", markers = "python_version < \"3.11\""}
 [metadata]
 lock-version = "2.1"
 python-versions = ">=3.10,<4.0"
-content-hash = "039c4d338ad983d17d5e83e30387f0c138df09a0d764bb6328577653ab7fae5f"
+content-hash = "29435472ca9820776f7cad8e637c05f5ef4956afde14e2673f105a3a426535d3"
