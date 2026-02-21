@@ -2,7 +2,6 @@ asyncio
 autodoc
 bascom
 bsky
-codeowners
 commitizen
 conftest
 coveragerc
@@ -23,7 +22,6 @@ foxundermoon
 genindex
 gitpython
 globaltoc
-hoverxref
 htmlcov
 intersphinx
 isort
