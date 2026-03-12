@@ -1,6 +1,7 @@
 local utils = import 'utils.libjsonnet';
 
 {
+  package_manager: 'uv',
   description: 'Commitizen plugin that prefixes commit messages with the common path or prefix of staged files.',
   keywords: ['commitizen', 'commit messages', 'git', 'version control'],
   project_name: 'cz-path',
@@ -15,9 +16,6 @@ local utils = import 'utils.libjsonnet';
         dependencies+: {
           commitizen: utils.latestPypiPackageVersionCaret('commitizen'),
           gitpython: utils.latestPypiPackageVersionCaret('gitpython'),
-        },
-        plugins: {
-          'commitizen.plugin': { cz_path: 'cz_path.plugin:PathCommitizen' },
         },
       },
     },

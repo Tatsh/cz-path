@@ -32,6 +32,7 @@ jsonschema
 lextudio
 libera
 libjsonnet
+libsonnet
 linters
 modindex
 mypy
@@ -40,7 +41,6 @@ norecursedirs
 numpy
 numpydoc
 pavelzw
-pipx
 pycache
 pydantic
 pydocstyle
@@ -52,7 +52,6 @@ pytest
 regen
 rstcheck
 schemafile
-sdist
 shellformat
 softprops
 sphinxcontrib
@@ -62,7 +61,7 @@ tomlkit
 tryfirst
 udvare
 venv
-virtualenv
 wiswa
 yapf
 yapfignore
+yarnrc
