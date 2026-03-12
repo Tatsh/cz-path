@@ -31,16 +31,6 @@ Commitizen plugin that prefixes commit messages with the common path or prefix o
 
 ## Installation
 
-### Poetry
-
-Example with `dev` group:
-
-```shell
-poetry add -G dev cz-path
-```
-
-### Pip
-
 ```shell
 pip install cz-path
 ```
