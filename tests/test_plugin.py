@@ -15,11 +15,12 @@ def test_path_commitizen_questions(mocker: MockerFixture) -> None:
     mocker.patch('commitizen.cz.pkgutil.iter_modules', return_value=[])
     mock_repo = mocker.patch('cz_path.plugin.Repo', autospec=True)
     mock_repo.return_value.index.diff.return_value = [
-        mocker.Mock(a_path='src/file1.py', renamed_file=False),
-        mocker.Mock(a_path='src/file2.py', renamed_file=False),
+        mocker.Mock(a_path='src/file1.py', new_file=False, renamed_file=False),
+        mocker.Mock(a_path='src/file2.py', new_file=False, renamed_file=False),
         mocker.Mock(a_path='src/subdir/file3.py',
-                    renamed_file=True,
-                    b_path='src/subdir/file3_new.py'),
+                    b_path='src/subdir/file3_new.py',
+                    new_file=False,
+                    renamed_file=True),
     ]
     from cz_path.plugin import PathCommitizen
     cz = PathCommitizen(mocker.Mock(settings={}))
@@ -36,16 +37,19 @@ def test_path_commitizen_message_no_common_prefixes(mocker: MockerFixture) -> No
     mocker.patch('commitizen.cz.pkgutil.iter_modules', return_value=[])
     mock_repo = mocker.patch('cz_path.plugin.Repo', autospec=True)
     mock_repo.return_value.index.diff.return_value = [
-        mocker.Mock(a_path='a.py', renamed_file=False),
-        mocker.Mock(a_path='b.py', renamed_file=False),
-        mocker.Mock(a_path='.gitignore', renamed_file=False),
-        mocker.Mock(a_path='.cz.json', renamed_file=False)
+        mocker.Mock(a_path='a.py', new_file=False, renamed_file=False),
+        mocker.Mock(a_path='b.py', new_file=False, renamed_file=False),
+        mocker.Mock(a_path='.gitignore', new_file=False, renamed_file=False),
+        mocker.Mock(a_path='.cz.json', new_file=False, renamed_file=False)
     ]
     from cz_path.plugin import PathCommitizen
     cz = PathCommitizen(mocker.Mock(settings={}))
-    cz.questions()
-    assert not any(q['name'] == 'Common path' for q in cz.questions())
-    assert not any(q['name'] == 'Common prefix' for q in cz.questions())
+    questions = cz.questions()
+    prefix_choices = next(
+        cast('ListQuestion', q)['choices'] for q in questions if q['name'] == 'prefix')
+    values = [choice['value'] for choice in prefix_choices]
+    assert 'project' in values
+    assert '' in values
 
 
 def test_no_staged_files_error(mocker: MockerFixture) -> None:

@@ -20,11 +20,12 @@ __all__ = ('PathCommitizen',)
 
 def _parse_diffs(diffs: Iterable[Diff]) -> Iterable[str]:
     for diff in diffs:
-        assert diff.a_path is not None
-        which = Path(diff.a_path)
-        if diff.renamed_file:
+        if diff.new_file or diff.renamed_file:
             assert diff.b_path is not None
             which = Path(diff.b_path)
+        else:
+            assert diff.a_path is not None
+            which = Path(diff.a_path)
         base, _, rest = which.name.partition('.')
         if not base and rest:
             # `.cz.json` -> `cz`
@@ -44,10 +45,6 @@ def _get_common_path() -> str:
     return os.path.commonpath(_get_staged_files())
 
 
-def _get_common_prefix() -> str:
-    return os.path.commonprefix(list(_get_staged_files()))
-
-
 class NoStagedFilesError(CzException):
     """Exception raised when there are no staged files for commit."""
     def __init__(self) -> None:
@@ -64,18 +61,12 @@ class PathCommitizen(BaseCommitizen):
                 'src',)))
         ]
         common_path = _get_common_path()
-        common_prefix = _get_common_prefix()
         choices: list[Choice] = []
         if common_path:
             for prefix in post_remove_path_prefixes:
                 common_path = common_path.removeprefix(f'{prefix}/')
             common_path = common_path.lower()
             choices.append({'value': common_path, 'name': common_path, 'key': 'p'})
-        if common_prefix:
-            for prefix in post_remove_path_prefixes:
-                common_prefix = common_prefix.removeprefix(f'{prefix}/')
-            common_prefix = common_prefix.lower()
-            choices.append({'value': common_prefix, 'name': common_prefix, 'key': 'r'})
         return [{
             'type':
                 'list',
