@@ -61,6 +61,7 @@ tomlkit
 tryfirst
 udvare
 venv
+virtualenv
 wiswa
 yapf
 yapfignore
