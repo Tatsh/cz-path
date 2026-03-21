@@ -9,6 +9,10 @@ adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
 ## [Unreleased]
 
+### Fixed
+
+- Fixed plugin loading by adding `commitizen.plugin` entry point to `pyproject.toml`.
+
 ## [0.0.5] - 2026-03-15
 
 ### Fixed

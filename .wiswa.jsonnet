@@ -17,6 +17,11 @@ local utils = import 'utils.libjsonnet';
           commitizen: utils.latestPypiPackageVersionCaret('commitizen'),
           gitpython: utils.latestPypiPackageVersionCaret('gitpython'),
         },
+        plugins: {
+          'commitizen.plugin': {
+            cz_path: 'cz_path.plugin:PathCommitizen',
+          },
+        },
       },
     },
   },
