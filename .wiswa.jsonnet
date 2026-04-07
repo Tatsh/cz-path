@@ -1,6 +1,7 @@
 local utils = import 'utils.libjsonnet';
 
 {
+  uses_user_defaults: true,
   package_manager: 'uv',
   description: 'Commitizen plugin that prefixes commit messages with the common path or prefix of staged files.',
   keywords: ['commitizen', 'commit messages', 'git', 'version control'],
@@ -24,8 +25,5 @@ local utils = import 'utils.libjsonnet';
         },
       },
     },
-  },
-  copilot: {
-    intro: 'cz-path is a plugin for Commitizen that gives options to prefix commit messages with a common path or common prefix of staged files.',
   },
 }

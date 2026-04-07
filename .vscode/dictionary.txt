@@ -1,3 +1,4 @@
+Ångström
 appimage
 asyncio
 autodoc
@@ -8,6 +9,7 @@ commitizen
 commonpath
 commonprefix
 conftest
+cooldown
 coveragerc
 coverallsapp
 ctypes
@@ -17,15 +19,14 @@ datatable
 datatables
 debugpy
 docstrings
+doctree
 doctrees
-dorny
 dunder
 eeyore
 elif
 esbenp
 esbonio
 excinfo
-fontawesome
 foxundermoon
 functools
 genindex
@@ -36,6 +37,7 @@ htmlcov
 intersphinx
 isort
 itertools
+jinja
 jsonnet
 jsonschema
 kwargs
@@ -51,6 +53,7 @@ myproject
 mypy
 namedtuples
 norecursedirs
+npmjs
 numpy
 numpydoc
 oneline
@@ -62,6 +65,7 @@ pydantic
 pydocstyle
 pyinstaller
 pylint
+pylock
 pypa
 pypi
 pyproject
@@ -87,7 +91,7 @@ vendored
 venv
 virtualenv
 wiswa
+wiswa's
 yapf
 yapfignore
 yarnrc
-ångström
