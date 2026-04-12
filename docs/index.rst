@@ -5,7 +5,16 @@ cz-path
 
 Commitizen plugin that prefixes commit messages with the common path or prefix of staged files.
 
-Installing ``cz-path`` pulls in Commitizen, so the ``cz`` command is available after installation.
+Installation
+============
+
+Install from PyPI:
+
+.. code-block:: shell
+
+   pip install cz-path
+
+The ``cz-path`` package depends on Commitizen, so installing it also provides the ``cz`` command.
 
 Using the plugin
 ================
