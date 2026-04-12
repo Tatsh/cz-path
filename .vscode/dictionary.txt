@@ -73,6 +73,7 @@ pytest
 regen
 rstcheck
 schemafile
+sdist
 setattr
 shellcheck
 shellformat

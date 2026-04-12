@@ -21,10 +21,14 @@ __all__ = ('PathCommitizen',)
 def _parse_diffs(diffs: Iterable[Diff]) -> Iterable[str]:
     for diff in diffs:
         if diff.new_file or diff.renamed_file:
-            assert diff.b_path is not None
+            if diff.b_path is None:
+                msg = 'Expected b_path on new or renamed file diff'
+                raise RuntimeError(msg)
             which = Path(diff.b_path)
         else:
-            assert diff.a_path is not None
+            if diff.a_path is None:
+                msg = 'Expected a_path on modified file diff'
+                raise RuntimeError(msg)
             which = Path(diff.a_path)
         base, _, rest = which.name.partition('.')
         if not base and rest:

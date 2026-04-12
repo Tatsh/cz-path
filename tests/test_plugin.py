@@ -110,3 +110,27 @@ def test_path_info(mocker: MockerFixture) -> None:
     from cz_path.plugin import PathCommitizen
     cz = PathCommitizen(mocker.Mock(settings={}))
     assert cz.info() == 'path commitizen'
+
+
+def test_questions_raises_when_diff_missing_b_path(mocker: MockerFixture) -> None:
+    mocker.patch('commitizen.cz.pkgutil.iter_modules', return_value=[])
+    mock_repo = mocker.patch('cz_path.plugin.Repo', autospec=True)
+    mock_repo.return_value.index.diff.return_value = [
+        mocker.Mock(a_path='a.py', b_path=None, new_file=True, renamed_file=False),
+    ]
+    from cz_path.plugin import PathCommitizen
+    cz = PathCommitizen(mocker.Mock(settings={}))
+    with pytest.raises(RuntimeError, match='b_path'):
+        cz.questions()
+
+
+def test_questions_raises_when_diff_missing_a_path(mocker: MockerFixture) -> None:
+    mocker.patch('commitizen.cz.pkgutil.iter_modules', return_value=[])
+    mock_repo = mocker.patch('cz_path.plugin.Repo', autospec=True)
+    mock_repo.return_value.index.diff.return_value = [
+        mocker.Mock(a_path=None, b_path='b.py', new_file=False, renamed_file=False),
+    ]
+    from cz_path.plugin import PathCommitizen
+    cz = PathCommitizen(mocker.Mock(settings={}))
+    with pytest.raises(RuntimeError, match='a_path'):
+        cz.questions()
