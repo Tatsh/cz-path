@@ -9,6 +9,11 @@ adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
 ## [Unreleased]
 
+### Added
+
+- User documentation for configuring the plugin and creating commits with `cz commit`, in the
+  README and `docs/index.rst`.
+
 ## [0.0.6] - 2026-03-21
 
 ### Fixed

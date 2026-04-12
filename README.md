@@ -38,13 +38,46 @@ Commitizen plugin that prefixes commit messages with the common path or prefix o
 pip install cz-path
 ```
 
+The package depends on Commitizen, so you get the `cz` command when you install `cz-path`.
+
 ## Usage
 
-Pass `-n cz_path` to `cz` or add it to your configuration file.
+### Configure Commitizen
 
-By default, `src/` will be removed from any determined prefix. This can be customised by setting
-`remove_path_prefixes` to `[]`. You also may want to add other locations such as a module name.
-Adding `/` is not required.
+Point Commitizen at this plugin by setting `name` to `cz_path` in your configuration file (see
+below). To use this plugin for a single run without changing the config file, pass `-n cz_path` or
+`--name cz_path` to `cz`.
+
+### Create a commit
+
+1. **Use a Git repository.** Run `cz` from the repository root. The plugin opens the Git index in
+   the current directory, so running it elsewhere will not see your project.
+
+2. **Stage your changes** with `git add`. The plugin looks at the staged diff against `HEAD` to
+   suggest a path prefix. If nothing is staged, Commitizen fails with a message that no staged files
+   were found.
+
+3. **Start Commitizen** to write the message and create the commit:
+
+   ```shell
+   cz commit
+   ```
+
+   Short form: `cz c`.
+
+4. **Answer the prompts:**
+   - **Prefix** — pick the suggested path prefix (if shown), or `project`, or `(empty)` for no
+     prefix.
+   - **Commit title** — the rest of the subject line. The full message is `<prefix>: <title>`.
+
+### Message format
+
+Commits follow `<prefix>: <title>`, for example `module/component: short description of the change`.
+The pattern is a prefix (which may be empty), then a colon and space, then the title.
+
+By default, `src/` is stripped from the computed prefix. Set `remove_path_prefixes` to `[]` to turn
+that off, or add other path segments (such as a top-level package name) to strip. You do not need to
+include a trailing `/` in each entry.
 
 ### `pyproject.toml`
 
