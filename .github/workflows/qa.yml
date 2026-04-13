@@ -32,7 +32,7 @@ jobs:
     steps:
       - uses: 'actions/checkout@v6.0.2'
       - name: 'Lint with Ruff'
-        uses: 'astral-sh/ruff-action@v3.6.1'
+        uses: 'astral-sh/ruff-action@v4.0.0'
 name: 'QA'
 'on':
   pull_request:
