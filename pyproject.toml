@@ -3,7 +3,7 @@ build-backend = "hatchling.build"
 requires = ["hatchling"]
 
 [dependency-groups]
-dev = ["commitizen>=4.13.9", "mypy>=1.20.0", "ruff>=0.15.9", "ty>=0.0.29", "yapf>=0.43.0"]
+dev = ["commitizen>=4.13.10", "mypy>=1.20.0", "ruff>=0.15.10", "ty>=0.0.29", "yapf>=0.43.0"]
 docs = [
   "autodoc-pydantic>=2.2.0",
   "doc8>=2.0.0",
@@ -22,7 +22,7 @@ tests = [
   "mock>=5.2.0",
   "pytest-cov>=7.1.0",
   "pytest-mock>=3.15.1",
-  "pytest>=9.0.2",
+  "pytest>=9.0.3",
 ]
 
 [project]
@@ -37,7 +37,7 @@ classifiers = [
   "Programming Language :: Python :: 3.14",
   "Typing :: Typed",
 ]
-dependencies = ["commitizen>=4.13.9", "gitpython>=3.1.46", "typing-extensions>=4.15.0"]
+dependencies = ["commitizen>=4.13.10", "gitpython>=3.1.46", "typing-extensions>=4.15.0"]
 description = "Commitizen plugin that prefixes commit messages with the common path or prefix of staged files."
 keywords = ["commitizen", "commit messages", "git", "version control"]
 license = "MIT"
