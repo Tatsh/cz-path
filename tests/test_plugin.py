@@ -20,7 +20,7 @@ def test_path_commitizen_questions(mocker: MockerFixture) -> None:
         mocker.Mock(a_path='src/subdir/file3.py',
                     b_path='src/subdir/file3_new.py',
                     new_file=False,
-                    renamed_file=True),
+                    renamed_file=True)
     ]
     from cz_path.plugin import PathCommitizen
     cz = PathCommitizen(mocker.Mock(settings={}))
@@ -76,18 +76,12 @@ def test_path_commitizen_schema(mocker: MockerFixture) -> None:
     assert cz.schema() == '<prefix>: <schema>'
 
 
-@pytest.mark.parametrize(
-    ('answers', 'expected'),
-    [
-        ({
-            'prefix': 'foo',
-            'title': 'bar'
-        }, 'foo: bar'),
-        ({
-            'prefix': 'foo'
-        }, 'foo: (no message provided)'),
-    ],
-)
+@pytest.mark.parametrize(('answers', 'expected'), [({
+    'prefix': 'foo',
+    'title': 'bar'
+}, 'foo: bar'), ({
+    'prefix': 'foo'
+}, 'foo: (no message provided)')])
 def test_path_commitizen_message(mocker: MockerFixture, answers: Mapping[str, Any],
                                  expected: str) -> None:
     mocker.patch('commitizen.cz.pkgutil.iter_modules', return_value=[])
@@ -116,7 +110,7 @@ def test_questions_raises_when_diff_missing_b_path(mocker: MockerFixture) -> Non
     mocker.patch('commitizen.cz.pkgutil.iter_modules', return_value=[])
     mock_repo = mocker.patch('cz_path.plugin.Repo', autospec=True)
     mock_repo.return_value.index.diff.return_value = [
-        mocker.Mock(a_path='a.py', b_path=None, new_file=True, renamed_file=False),
+        mocker.Mock(a_path='a.py', b_path=None, new_file=True, renamed_file=False)
     ]
     from cz_path.plugin import PathCommitizen
     cz = PathCommitizen(mocker.Mock(settings={}))
@@ -128,7 +122,7 @@ def test_questions_raises_when_diff_missing_a_path(mocker: MockerFixture) -> Non
     mocker.patch('commitizen.cz.pkgutil.iter_modules', return_value=[])
     mock_repo = mocker.patch('cz_path.plugin.Repo', autospec=True)
     mock_repo.return_value.index.diff.return_value = [
-        mocker.Mock(a_path=None, b_path='b.py', new_file=False, renamed_file=False),
+        mocker.Mock(a_path=None, b_path='b.py', new_file=False, renamed_file=False)
     ]
     from cz_path.plugin import PathCommitizen
     cz = PathCommitizen(mocker.Mock(settings={}))
