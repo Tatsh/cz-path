@@ -16,8 +16,8 @@
       :target: https://github.com/Tatsh/cz-path/blob/master/LICENSE.txt
       :alt: License
 
-   .. image:: https://img.shields.io/github/commits-since/Tatsh/cz-path/v0.0.6/master
-      :target: https://github.com/Tatsh/cz-path/compare/v0.0.6...master
+   .. image:: https://img.shields.io/github/commits-since/Tatsh/cz-path/v0.0.7/master
+      :target: https://github.com/Tatsh/cz-path/compare/v0.0.7...master
       :alt: GitHub commits since latest release (by SemVer including pre-releases)
 
    .. image:: https://github.com/Tatsh/cz-path/actions/workflows/codeql.yml/badge.svg

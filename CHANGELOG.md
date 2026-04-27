@@ -9,10 +9,17 @@ adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
 ## [Unreleased]
 
+## [0.0.7] - 2026-04-26
+
 ### Added
 
 - User documentation for configuring the plugin and creating commits with `cz commit`, in the
   README and `docs/index.rst`.
+
+### Changed
+
+- Replaced internal `assert` statements with explicit `RuntimeError` checks when parsing the
+  staged diff, so failures surface even when assertions are disabled.
 
 ## [0.0.6] - 2026-03-21
 
@@ -55,7 +62,8 @@ This release is primarily for testing the publishing workflow.
 
 First version.
 
-[unreleased]: https://github.com/Tatsh/cz-path/compare/v0.0.6...HEAD
+[unreleased]: https://github.com/Tatsh/cz-path/compare/v0.0.7...HEAD
+[0.0.7]: https://github.com/Tatsh/cz-path/compare/v0.0.6...v0.0.7
 [0.0.6]: https://github.com/Tatsh/cz-path/compare/v0.0.5...v0.0.6
 [0.0.5]: https://github.com/Tatsh/cz-path/compare/v0.0.4...v0.0.5
 [0.0.4]: https://github.com/Tatsh/cz-path/compare/v0.0.3...v0.0.4
