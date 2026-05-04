@@ -73,4 +73,8 @@ html_theme_options = {
     'site_url': 'https://cz-path.readthedocs.org',
     'toc_title_is_page_title': True
 }
-intersphinx_mapping = {'python': ('https://docs.python.org/3', None)}
+intersphinx_mapping = {
+    'gitpython': ('https://gitpython.readthedocs.io/en/stable/', None),
+    'python': ('https://docs.python.org/3', None),
+    'typing-extensions': ('https://typing-extensions.readthedocs.io/en/latest/', None)
+}
