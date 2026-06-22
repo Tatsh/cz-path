@@ -1,4 +1,9 @@
 {
+  "_wiswa": {
+    "commandLine": "wiswa -d",
+    "lastRun": "2026-06-22T04:37:13Z",
+    "version": "83f3a8c-dirty"
+  },
   "contributors": ["Andrew Udvare <audvare@gmail.com>"],
   "cspell": {
     "cache": {
@@ -39,7 +44,7 @@
     "@prettier/plugin-xml": "^3.4.2",
     "cspell": "^10.0.1",
     "markdownlint-cli2": "^0.22.1",
-    "prettier": "^3.8.3",
+    "prettier": "^3.8.4",
     "prettier-plugin-ini": "^1.3.0",
     "prettier-plugin-sort-json": "^4.2.0",
     "prettier-plugin-toml": "^2.0.6",
@@ -70,7 +75,7 @@
     "showFound": true
   },
   "name": "cz-path",
-  "packageManager": "yarn@4.14.1",
+  "packageManager": "yarn@4.17.0",
   "prettier": {
     "endOfLine": "lf",
     "iniSpaceAroundEquals": true,
@@ -95,7 +100,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git@github.com:Tatsh/cz-path.git"
+    "url": "git+https://github.com/Tatsh/cz-path.git"
   },
   "scripts": {
     "check-formatting": "prettier --check . && uv run yapf --diff --parallel --recursive . && markdownlint-cli2 --config package.json --configPointer /markdownlint-cli2",
